@@ -1,5 +1,7 @@
-FROM php:8.3-apache
+FROM ubuntu/php:8.5-26.04_edge
 
-COPY index.php /var/www/html/
+COPY index.php /var/www/html/index.php
 
-EXPOSE 8081
+EXPOSE 80
+
+CMD ["php", "-S", "0.0.0.0:80", "-t", "/var/www/html"]
